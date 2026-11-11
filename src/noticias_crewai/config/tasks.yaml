@@ -1,0 +1,26 @@
+investigar_noticias_tarea:
+  description: >
+    Busca titulares acerca de {tema} usando la herramienta de 'Buscador de noticias'.
+    Haz al menos 2 búsquedas con palabras distintas y quédate con las {num_noticias}, que no se repitan, más relevantes.
+    No incluyas ningun titular que no venga de la herramienta.
+  expected_output: >
+    Una lista numerada de {num_noticias} noticias. Para cada una: titulo, medio, fecha y enlace.
+    Sin introducciones ni conclusiones.
+  agent: investigador_noticias
+  output_file: output/1_noticias.md
+
+redactar_noticias_tarea:
+  description: >
+    Con las noticias que te ha pasado el investigador de noticias, escribe un resumen
+    para alguien que quiera saber qué está pasando con {tema}.
+    NO hagas una lista de titulares: escribe en prosa, en 1 o 2 párrafos.
+    Agrupa las noticias que hablen de temas parecidos y explica la visión general
+    (qué temas se repiten, qué preocupa, qué novedades hay), citando el medio entre paréntesis.
+    Usa solo la información recibida: no añadas datos que no aparezcan en los titulares.
+  expected_output: >
+    Un resumen en español de 150-200 palabras, en 1 o 2 párrafos de prosa (sin viñetas),
+    seguido de una única sección "## Fuentes" con una línea por noticia en este formato:
+    - [Titular](enlace) — Medio, fecha
+  agent: redactor_noticias
+  output_file: output/2_resumen.md
+  markdown: true

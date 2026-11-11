@@ -1,0 +1,20 @@
+[project]
+name = "noticias_crewai"
+version = "0.1.0"
+description = "Equipo de 2 agentes CrewAI: un investigador de noticias (Google News RSS) y un redactor de resúmenes"
+authors = [{ name = "Edison" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[google-genai,tools]==1.14.1",
+]
+
+[project.scripts]
+noticias_crewai = "noticias_crewai.main:run"
+run_crew = "noticias_crewai.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
